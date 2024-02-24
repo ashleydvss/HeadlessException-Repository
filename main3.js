@@ -153,19 +153,19 @@ class Circle{
         
         for (var i = 0; i<all_circles.length; i++){
             //console.log(Math.pow(all_circles[i].getX, 2.0))
-                if ((Math.pow(this.xpos - all_circles[i].getX),2.0)+Math.pow(this.ypos - all_circles[i].getY, 2.0)<=000.0){
+                if ((Math.pow(this.xpos - all_circles[i].getX),2.0)+Math.pow(this.ypos - all_circles[i].getY, 2.0)<=25500.0){
                     
                     if(type==1){
                         if(all_circles[i].getType==2){
                             if(all_circles[i].getX>this.xpos){
-                                this.xpos -= this.dx*Math.random()*SPEED_MULTIPLIER;
+                                this.xpos += this.dx*Math.random()*SPEED_MULTIPLIER;
                             }else{
                                 this.xpos += this.dx*Math.random()*SPEED_MULTIPLIER;
                             }
                             if(all_circles[i].getY>this.ypos){
                                 this.ypos += this.dy*Math.random()*SPEED_MULTIPLIER;
                             }else{
-                                this.ypos -= this.dy*Math.random()*SPEED_MULTIPLIER;
+                                this.ypos += this.dy*Math.random()*SPEED_MULTIPLIER;
                             }
                         }
 
