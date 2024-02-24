@@ -73,19 +73,27 @@ class Circle{
             hit_counter++
         }
         
-        if (getDistance(this.xpos, this.ypos, other.xpos, other.ypos) < (other.radius + this.radius)){
+        //check if collides
+        if (getDistance(this.xpos, this.ypos, other.xpos, other.ypos) <= (other.radius + this.radius)){
             this.color = "red";
-            if ((this.xpos + this.radius) > (other.xpos+other.radius)){
-                this.dx = -this.dx;
-                //other.xpos--;
+
+            var otherType = other.text; //seeing other objects number
+            //1 = rock
+            //2 = paper
+            //3 = scissor
+            if (this.text == 1 && other.text == 2){
+                this.text = 2;
             }
-            if ((this.ypos + this.radius) > (other.ypos+other.radius)){
-                this.dy = -this.dy;
-                //other.ypos--;
+            if (this.text == 2 && other.text == 3){
+                this.text = 3;
+            }
+            if (this.text == 3 && other.text == 1){
+                this.text = 1;
             }
 
+
         }
-        if (getDistance(this.xpos, this.ypos, other.xpos, other.ypos) >= (other.radius + this.radius)){
+        if (getDistance(this.xpos, this.ypos, other.xpos, other.ypos) > (other.radius + this.radius)){
             this.color = "blue";
         }
 
